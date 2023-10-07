@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="tailwind.css">
+</head>
+
+<body>
+
+    <div class="flex justify-end m-2">
+        <label class="relative flex items-end cursor-pointer">
+            <input type="checkbox" id="checkbox" value="" class="sr-only peer">
+            <div
+                class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-300 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-300">
+            </div>
+            <span class="ml-3 text-sm font-normal text-gray-900 dark:text-gray-300">Light/Dark Mode Toggle</span>
+        </label>
+    </div>
+
+    <div class="blue-container">
+        <h2 class="title-text">Todo App</h2>
+        <h4 class="intro-text">A better and smarter way to keep track of your tasks</h4>
+    </div>
+    <div class="form-div">
+        <form class="addTaskForm">
+            <input type="text" class="input" id="taskInput" required>
+            <button class="addTaskBtn" type="submit">Add Task</button>
+        </form>
+    </div>
+    <div class="ul-div">
+        <ul id="taskList"></ul>
+    </div>
+
+
+
+    <script src="todo-app.js"></script>
+</body>
+
+</html>

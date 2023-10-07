@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel+Decorative:wght@400;700&family=Josefin+Sans:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Josefin Sans", sans-serif
+}
+body {
+    @apply dark:bg-blue-950
+}
+.addTaskForm {
+    @apply w-full;
+}
+.form-div {
+    @apply w-[60%] ml-auto mr-auto;
+}
+
+.input {
+    @apply outline-blue-950 border border-blue-950 rounded-lg h-12 w-[60%] ml-auto mr-auto dark:border-blue-300
+}
+.blue-container {
+    @apply bg-white w-[90%] h-[60%] p-[20px] mr-auto ml-auto dark:bg-blue-950;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 8px;
+}
+.title-text {
+    @apply text-center dark:text-white text-blue-950 text-[60px];
+}
+.intro-text {
+    @apply text-blue-950 dark:text-white text-[20px] text-center
+}
+.addTaskBtn {
+    @apply bg-blue-950 hover:bg-blue-900 dark:bg-white dark:text-blue-950 dark:hover:bg-blue-100 text-white p-3 font-semibold rounded-lg
+}
+.delete-button {
+    @apply bg-red-700 rounded-md text-white p-1 m-3 w-[120px]
+}
+.no-tasks {
+    @apply text-center dark:text-white;
+}
+.li-items {
+    @apply ml-20 mr-20 flex items-center justify-between;
+}
+.task-text {
+    @apply dark:text-white
+}
+.input-h4-div {
+    @apply flex items-center space-x-4;
+}
+/* .ul-div {
+    @apply flex justify-between;
+} */
