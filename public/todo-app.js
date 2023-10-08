@@ -52,7 +52,7 @@ const createTaskItem = (task) => {
 // Rendering saved tasks to the browser
 const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 const renderTasks = () => {
-    if (localStorage['tasks'] === '[]') {
+    if (!storedTasks || storedTasks.length === 0) {
         taskList.insertAdjacentHTML('beforeend', '<p class="no-tasks">You have no saved tasks!</p>')
     } else {
         storedTasks.forEach((task) => {
@@ -69,12 +69,10 @@ const addTask = (event) => {
     const task = taskInput.value;
     const taskItem = createTaskItem(task);
     taskList.insertAdjacentHTML('beforeend', taskItem);
-    // Array.from(taskList.children).reverse();
     storedTasks.unshift(task)
-    window.location = 'index.html'
     localStorage.setItem('tasks', JSON.stringify(storedTasks))
     addTaskForm.reset();
-
+    // window.location = 'index.html';
     // Removing "You have no saved tasks" text
     document.querySelector('p.no-tasks').style.visibility = "hidden";
 }
@@ -100,13 +98,16 @@ function deleteTask(event) {
     if (listItem) {
         const indexToDelete = Array.from(listItem.parentNode.children).indexOf(listItem);
         deleteItemFromLocalStorage(indexToDelete);
-        listItem.remove();
+        window.location = 'index.html';
+        // listItem.remove();
     }
 
 }
 
 function deleteItemFromLocalStorage(index) {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    storedTasks.splice(index, 1);
-    localStorage.setItem('tasks', JSON.stringify(storedTasks));
+    if (index >= 0 && index < storedTasks.length) {
+        storedTasks.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify(storedTasks));
+    }
 }
