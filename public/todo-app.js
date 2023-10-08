@@ -72,7 +72,7 @@ const addTask = (event) => {
     storedTasks.unshift(task)
     localStorage.setItem('tasks', JSON.stringify(storedTasks))
     addTaskForm.reset();
-    // window.location = 'index.html';
+    window.location = 'index.html';
     // Removing "You have no saved tasks" text
     document.querySelector('p.no-tasks').style.visibility = "hidden";
 }
